@@ -1,4 +1,6 @@
+import React, { Suspense } from "react";
 import Link from "next/link";
+import UserData from "./components/UserData";
 
 export default function Home() {
   return (
@@ -10,6 +12,9 @@ export default function Home() {
         >
           Dashboard
         </Link>
+        <Suspense fallback={<p>Loading..</p>}>
+          <UserData />
+        </Suspense>
       </div>
     </div>
   );
